@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Events Today</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="./styles/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="main-container">
+                <h1>Events that happened today</h1>
+                <div class="event-card-container">
+                    <% events.forEach(event => { %>
+                        <div class="event-card">
+                            <div class="content">
+                                <div class="inner-content">
+                                    <ul>
+                                        <% event.content.forEach(element => { %>
+                                            <li><span><%= element %></span></li>
+                                        <% }); %>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="vr"></div>
+                            <div class="emph date"><span><%= event.date %></span></div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+    
+            <div class="footer-div">
+                <footer>
+                    <p class = "margin-h emph">Copyright © 2024 Divyajyoti Panda</p>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
